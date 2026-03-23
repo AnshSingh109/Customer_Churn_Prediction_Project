@@ -112,3 +112,31 @@ It shows how many customers were correctly or incorrectly classified as Churn or
 
 <img width="444" height="393" alt="image" src="https://github.com/user-attachments/assets/0e4a813c-682e-4d10-a64b-a00fed870a0a" />
 
+
+### Feature Importance (Random Forest)
+
+Feature importance helps us understand which features contribute the most to the model's predictions.
+Random Forest provides built-in feature importance by measuring how much each feature improves the model’s performance when used for splitting decision trees.
+
+In this project, the following steps were done:
+
+Extracted feature importance from the trained Random Forest model
+
+Sorted and selected the top 10 most important features
+
+Plotted a horizontal bar chart for easy visualization
+
+This graph shows which factors have the strongest impact on predicting customer churn.
+Features like tenure, monthly charges, contract type, and total charges usually appear as the most influential in churn prediction.
+
+
+<img width="883" height="451" alt="image" src="https://github.com/user-attachments/assets/9dc53464-2390-44b7-b7d5-8774ed93300a" />
+
+### Step - 8: Visualization of Predictions
+
+
+A line graph comparing the actual and predicted churn values helps visualize how closely each model’s predictions match the true customer outcomes. By plotting all three models together, we can easily observe which algorithm follows the actual churn pattern more accurately. This comparison provides a clear and intuitive understanding of model performance over the same set of customers.
+
+
+<img width="549" height="374" alt="image" src="https://github.com/user-attachments/assets/1e1e46ed-1bc8-41aa-92b1-3a1325c712df" />
+
