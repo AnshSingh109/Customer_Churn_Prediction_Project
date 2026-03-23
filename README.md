@@ -64,6 +64,8 @@ Why it's effective:
 
 - Often used in text classification & spam detection
 
+## Problem Statement
+
 - Customer churn is one of the most significant challenges faced by the telecom industry. As competition increases, retaining existing customers becomes far more cost-effective than acquiring new ones. Predicting which customers are likely to leave the service enables companies to take proactive retention actions, design targeted offers, and enhance overall customer satisfaction.
 
 The Telco Customer Churn dataset contains detailed information about each customer, including demographic factors, service subscriptions, account details, billing methods, and monthly spending patterns. Key attributes such as tenure, contract type, internet service, payment method, monthly charges, and churn status provide valuable insights into customer behavior and potential risk factors that may contribute to churn.
@@ -140,3 +142,36 @@ A line graph comparing the actual and predicted churn values helps visualize how
 
 <img width="549" height="374" alt="image" src="https://github.com/user-attachments/assets/1e1e46ed-1bc8-41aa-92b1-3a1325c712df" />
 
+
+#### Why These Metrics Matter for Churn Prediction
+
+- Accuracy → overall correctness
+
+- Precision → how reliable churn predictions are
+
+- Recall → how many actual churners are detected
+
+- F1-Score → balanced evaluation, best for imbalanced datasets
+
+These metrics together give a complete view of model performance, helping us choose the best model for predicting customer churn.
+
+<img width="1001" height="528" alt="image" src="https://github.com/user-attachments/assets/b84fba68-44b5-42de-9fc7-814882cbd6a5" />
+
+
+
+## Conclusion
+
+- Random Forest Classifier delivers the strongest overall performance for predicting customer churn.
+
+- KNN and Naive Bayes provide useful comparisons but are less accurate for this dataset.
+
+- Evaluation metrics such as Accuracy, Precision, Recall, and F1-Score help identify the most reliable model.
+
+- Key factors influencing churn include tenure, contract type, monthly charges, and internet service.
+
+- Further improvement can be achieved by tuning hyperparameters, balancing the dataset, or applying advanced models like XGBoost or Logistic Regression.
+
+
+
+
+### Please upload the DATASET
