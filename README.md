@@ -1,177 +1,148 @@
-# Customer_Churn_Prediction_Project
-Customer Churn Prediction using Random Forest, KNN, Naive Bayes 
+# 📊 Customer Churn Prediction (Telco Dataset)
 
-Customer retention is one of the most critical challenges faced by businesses, especially in competitive industries like telecommunications. Understanding the factors that lead customers to discontinue their services—commonly known as customer churn—is essential for maintaining profitability and growth. This project focuses on predicting customer churn using machine learning techniques applied to a publicly available telecom customer dataset.
+## 📌 Project Overview
 
-We will perform:
+This project focuses on predicting customer churn using machine learning techniques on a real-world telecom dataset. The goal is to identify customers who are likely to leave the service so that businesses can take proactive retention measures.
 
-Exploratory Data Analysis (EDA): to understand data patterns, distributions, and correlations.
+The dataset used is the **Telco Customer Churn dataset**, which contains customer demographics, account information, and service usage details.
 
-Feature Scaling: to normalize numerical values for better model performance.
+---
 
-Evaluation Metrics: to assess model performance and accuracy
+## 📂 Dataset
 
-Customer retention is one of the most critical challenges faced by businesses, especially in competitive industries like telecommunications. Understanding the factors that lead customers to discontinue their services—commonly known as customer churn—is essential for maintaining profitability and growth. This project focuses on predicting customer churn using machine learning techniques applied to a publicly available telecom customer dataset.
+* Source: Telco Customer Churn Dataset
+* File used: `WA_Fn-UseC_-Telco-Customer-Churn.csv`
+* Contains information such as:
 
-We will perform:
+  * Customer demographics
+  * Services subscribed
+  * Billing information
+  * Churn status
 
-Exploratory Data Analysis (EDA): to understand data patterns, distributions, and correlations.
+---
 
-Feature Scaling: to normalize numerical values for better model performance.
+## ⚙️ Project Workflow
 
-Evaluation Metrics: to assess model performance and accuracy
+### 1. Data Loading
 
-## ML Algorithms Used
+* Loaded dataset using **Pandas**
+* Inspected structure using `.head()` and `.info()`
 
-### Random Forest
+### 2. Data Preprocessing
 
-Random Forest is an ensemble learning algorithm that builds multiple decision trees and combines their outputs to make a final prediction.
-Each tree learns from a random subset of the data, and the final prediction is based on majority voting.
+* Converted `TotalCharges` to numeric format
+* Handled missing values using **median imputation**
+* Encoded target variable (`Churn`) using **LabelEncoder**
+* Applied **One-Hot Encoding** (`get_dummies`) for categorical features
 
-Why it's effective:
+---
 
-- Reduces overfitting
+### 3. Exploratory Data Analysis (EDA)
 
-- Handles both numerical & categorical data
+* Used **Seaborn** and **Matplotlib** for visualization
+* Analyzed:
 
-- Gives high accuracy and feature importance
+  * Churn distribution
+  * Feature relationships
+  * Correlation patterns
 
-### K-Nearest Neighbors (KNN)
+---
 
-KNN is a distance-based algorithm that classifies a new data point based on the K closest neighbors in the feature space.
-It assumes that similar data points tend to belong to the same class.
+### 4. Feature Scaling
 
-Why it's effective:
+* Applied **StandardScaler** to normalize numerical features
+* Ensured better performance for distance-based models
 
-- Simple and intuitive
+---
 
-- Works well with properly scaled data
+### 5. Model Training
 
-- No training time — all computation happens during prediction
-<br>
+The following machine learning models were implemented:
 
-### Naive Bayes
+* 🌳 Random Forest Classifier
+* 📍 K-Nearest Neighbors (KNN)
+* 📊 Gaussian Naive Bayes
 
-Naive Bayes is a probabilistic algorithm based on Bayes’ Theorem.
-It calculates the probability of each class given the input features and predicts the class with the highest probability.
-It is called “naive” because it assumes all features are independent.
+---
 
-Why it's effective:
+### 6. Model Evaluation
 
-- Fast and efficient
+Models were evaluated using:
 
-- Works well with large and high-dimensional data
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Confusion Matrix
+* ROC Curve & AUC Score
 
-- Often used in text classification & spam detection
+---
 
-## Problem Statement
+## 📈 Results & Insights
 
-- Customer churn is one of the most significant challenges faced by the telecom industry. As competition increases, retaining existing customers becomes far more cost-effective than acquiring new ones. Predicting which customers are likely to leave the service enables companies to take proactive retention actions, design targeted offers, and enhance overall customer satisfaction.
+* Compared performance of multiple models
+* Identified the most effective model for churn prediction
+* Found important features influencing churn using **feature importance (Random Forest)**
 
-The Telco Customer Churn dataset contains detailed information about each customer, including demographic factors, service subscriptions, account details, billing methods, and monthly spending patterns. Key attributes such as tenure, contract type, internet service, payment method, monthly charges, and churn status provide valuable insights into customer behavior and potential risk factors that may contribute to churn.
+---
 
-The objective of this project is to explore and analyze these features through data preprocessing and exploratory analysis, then apply machine learning techniques to build accurate churn prediction models. By classifying customers into “Churn” and “Not Churn,” the system can help telecom companies understand churn drivers, reduce customer loss, and make data-driven business decisions.
+## 🛠️ Technologies Used
 
-### Heatmap: Correlation Between Numerical Features
+* Python 🐍
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
 
-A correlation heatmap helps identify how numerical features in the dataset are related to each other. In customer churn analysis, understanding these relationships is important because certain patterns—such as higher charges or longer tenure—may influence a customer’s likelihood of leaving the service. By visualizing correlations, we can easily detect strong positive or negative relationships among features like MonthlyCharges, TotalCharges, tenure, and SeniorCitizen, which helps us better understand customer behavior and guides feature selection for machine learning models.
+---
 
-<img width="625" height="528" alt="image" src="https://github.com/user-attachments/assets/58db6257-0442-4bf7-83f8-2e75fd080cca" />
+## 📁 File Structure
 
+```
+Customer_Churn_Project.ipynb   # Main notebook
+README.md                      # Project documentation
+```
 
+---
 
-#### 5. Confusion Matrix
+## ▶️ How to Run
 
-**Definition**:
+1. Clone the repository:
 
-A Confusion Matrix is a 2×2 table that summarizes the model’s predictions by comparing them with the actual class labels.
-It shows how many customers were correctly or incorrectly classified as Churn or Not Churn.
-<br><br>
+```bash
+git clone https://github.com/your-username/customer-churn-prediction.git
+```
 
-**Matrix Structure**
+2. Install dependencies:
 
-|                 | **Predicted: No**   | **Predicted: Yes**  |
-| --------------- | ------------------- | ------------------- |
-| **Actual: No**  | True Negative (TN)  | False Positive (FP) |
-| **Actual: Yes** | False Negative (FN) | True Positive (TP)  |
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+```
 
-<br>
+3. Run the notebook:
 
-**Purpose**:
+```bash
+jupyter notebook
+```
 
-- Helps understand exactly where the model is making mistakes
+---
 
-- Shows types of errors:
+## 💡 Future Improvements
 
-   - False Positives (FP) → model predicts churn, but customer stays
+* Hyperparameter tuning using GridSearchCV
+* Try advanced models (XGBoost, LightGBM)
+* Deploy using Flask/Django
+* Build a dashboard for visualization
 
-   -  False Negatives (FN) → model predicts no churn, but customer actually churns (most critical)
+---
 
-- Helps interpret Precision, Recall, and F1-Score
+## 🤝 Contributing
 
-- Provides a clear visual breakdown of model performance beyond accuracy
+Feel free to fork this repository and improve the project.
 
+---
 
-<img width="444" height="393" alt="image" src="https://github.com/user-attachments/assets/0e4a813c-682e-4d10-a64b-a00fed870a0a" />
+## 📜 License
 
-
-### Feature Importance (Random Forest)
-
-Feature importance helps us understand which features contribute the most to the model's predictions.
-Random Forest provides built-in feature importance by measuring how much each feature improves the model’s performance when used for splitting decision trees.
-
-In this project, the following steps were done:
-
-Extracted feature importance from the trained Random Forest model
-
-Sorted and selected the top 10 most important features
-
-Plotted a horizontal bar chart for easy visualization
-
-This graph shows which factors have the strongest impact on predicting customer churn.
-Features like tenure, monthly charges, contract type, and total charges usually appear as the most influential in churn prediction.
-
-
-<img width="883" height="451" alt="image" src="https://github.com/user-attachments/assets/9dc53464-2390-44b7-b7d5-8774ed93300a" />
-
-### Step - 8: Visualization of Predictions
-
-
-A line graph comparing the actual and predicted churn values helps visualize how closely each model’s predictions match the true customer outcomes. By plotting all three models together, we can easily observe which algorithm follows the actual churn pattern more accurately. This comparison provides a clear and intuitive understanding of model performance over the same set of customers.
-
-
-<img width="549" height="374" alt="image" src="https://github.com/user-attachments/assets/1e1e46ed-1bc8-41aa-92b1-3a1325c712df" />
-
-
-#### Why These Metrics Matter for Churn Prediction
-
-- Accuracy → overall correctness
-
-- Precision → how reliable churn predictions are
-
-- Recall → how many actual churners are detected
-
-- F1-Score → balanced evaluation, best for imbalanced datasets
-
-These metrics together give a complete view of model performance, helping us choose the best model for predicting customer churn.
-
-<img width="1001" height="528" alt="image" src="https://github.com/user-attachments/assets/b84fba68-44b5-42de-9fc7-814882cbd6a5" />
-
-
-
-## Conclusion
-
-- Random Forest Classifier delivers the strongest overall performance for predicting customer churn.
-
-- KNN and Naive Bayes provide useful comparisons but are less accurate for this dataset.
-
-- Evaluation metrics such as Accuracy, Precision, Recall, and F1-Score help identify the most reliable model.
-
-- Key factors influencing churn include tenure, contract type, monthly charges, and internet service.
-
-- Further improvement can be achieved by tuning hyperparameters, balancing the dataset, or applying advanced models like XGBoost or Logistic Regression.
-
-
-
-
-### Please upload the DATASET
+This project is open-source and available under the MIT License.
