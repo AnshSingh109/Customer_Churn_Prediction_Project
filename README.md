@@ -111,7 +111,7 @@ README.md                      # Project documentation
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/customer-churn-prediction.git
+git clone https://github.com/AnshSingh109/Customer_Churn_Prediction_Project.git
 ```
 
 2. Install dependencies:
